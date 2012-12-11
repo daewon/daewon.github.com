@@ -139,10 +139,10 @@
                     </ul>
                 </div>
                 <div class="markdown-wrapper">
-                    <p><strong>What&#39;s the result of this JS expression? [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;].map(parseInt)</strong></p><p><img src="/post/Array.prototype.map_with_parseInt/@img/map.png" alt="wrongresult "></p><p>위 문제는 javascript에 map 함수 구현과 가변 인자 때문에 발생한다. </p><p>먼저 아래 식에 실행 결과를 확인해 보자</p><pre><code class="javacript">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>].map( <span class="built_in">function</span>(v, i, o){ 
+                    <p><strong>[1, 2, 3].map(parseInt)를 실행하면 어떤 결과가 나올까?</strong></p><p><img src="/post/Array.prototype.map_with_parseInt/@img/map.png" alt="wrongresult "></p><p>결과는 [1, Nan, Nan]이 나오는데 원인은 map 함수의 구현과 가변 인자 때문에 발생한다. </p><p>먼저 아래 식에 실행 결과를 확인해 보자</p><pre><code class="javacript">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>].map( <span class="built_in">function</span>(v, i, o){ 
     <span class="keyword">return</span> parseInt(v) 
 }; <span class="comment">// [1, 2, 3]</span>
-</code></pre><p>map 함수에 인자로 사용된 익명함수는 인자를 parseInt함수로 전달만 하기 때문에 제거가 가능하다.</p><p>위 식을 아래와 같이 수정 후 결과를 확인해 보자.</p>
+</code></pre>
                 </div>
                 <hr/>
                 <a class="pull-right" href="/post/Array.prototype.map_with_parseInt#disqus_thread"></a>
