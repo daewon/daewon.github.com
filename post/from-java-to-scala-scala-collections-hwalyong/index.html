@@ -298,8 +298,9 @@ val maxCost = db<span class="variable">.sales</span><span class="variable">.maxB
 }
 </code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
 val sum = db<span class="variable">.sales</span><span class="variable">.filter</span>(sale =&gt; sale<span class="variable">.buyer</span><span class="variable">.male</span> &amp;&amp; sale<span class="variable">.seller</span><span class="variable">.male</span>)<span class="variable">.map</span>(_<span class="variable">.cost</span>)<span class="variable">.sum</span>
-</code></pre><p>1~5번까지 예를 보면 모든 반복 버전은 동일한 loop을 수행하고 있다는 것을 알 수 있다. </p>
-<h4 id="toc_11">06. Find age of youngest who bought for more than 50,000</h4>
+</code></pre><p>반복 버전을 살펴보자. 3번 예제와 거의 동일하게 loop을 순화하는 것을 확인할 수 있다. 위에서 설명했던 <strong>비지니스 객채의 순회를 반복한다</strong> 부분이 바로 이 부분이다.
+함수형 버전을 보면 이런 부분이 전부 감춰져 있음을 알 수 있다. </p>
+<h4 id="toc_11">06. 5000000원 이상을 구매한 가장 어린 사람을 찾아보자</h4>
 <pre><code class="java">// <span class="variable">Iterative</span> version
 int age = <span class="variable">Integer</span>.<span class="variable">MAX_VALUE</span>;
 <span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Sale</span> sale : sales)</span> {
