@@ -328,19 +328,17 @@ Collections.sort(sortedSales, new Comparator<span class="tag">&lt;<span class="t
 val sortedSales = db<span class="variable">.sales</span><span class="variable">.sortBy</span>(_<span class="variable">.cost</span>)
 </code></pre><p>반복 버전도 충분히 깔끔하지만, 뭐랄까 조금 코드가 너저분 하다. 자바가 익명 함수를 지원하지 않기 때문에 익명 객체를 생성해서 이를 처리했기 때문이다.
 함수형 버전은 같은 목표를 훨씬 적은 양의 코드로 해결했다.</p>
-<h4 id="toc_13">08. 차 객체에서 original cost를 가져와서 새로운 리스트를 생성해 보자</h4>
-<pre><code class="java"><span class="comment">// Iterative version</span>
-List&lt;Double&gt; costs = new ArrayList&lt;Double&gt;();
-<span class="keyword">for</span> (Car car : cars) {
-  costs<span class="variable">.add</span>(car<span class="variable">.getOriginalValue</span>());
+<h4 id="toc_13">08. Car 객체 목록 에서 original cost를 가져와서 새로운 목록을 생성해 보자</h4>
+<pre><code class="java">// <span class="variable">Iterative</span> version
+<span class="variable">List</span>&lt;<span class="variable">Double</span>&gt; costs = new <span class="variable">ArrayList</span>&lt;<span class="variable">Double</span>&gt;();
+<span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Car</span> car : cars)</span> {
+  <span class="title">costs</span>.<span class="title">add</span><span class="params">(car.<span class="function_name">getOriginalValue</span>())</span>;
 }
-
-~~~scala
-<span class="comment">// Functional version</span>
+</code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
 val costs = db<span class="variable">.cars</span><span class="variable">.map</span>(_<span class="variable">.originalValue</span>)
 </code></pre><p>map함수는 함수형 언어에서 굉장히 많이 사용되는 함수다. 일반적으로 A 목록으로부터 함수 F를 적용한 목록 B를 생성한다. 
 cars목록으로부터 originalValue를 추출하는 함수를 적용해서 cost목록을 생성한다.</p>
-<h4 id="toc_14">09. 차 객체 목록을 brand로 그루핑 해 보자</h4>
+<h4 id="toc_14">09. Car 객체 목록을 brand로 그루핑 해 보자</h4>
 <pre><code class="java">// <span class="variable">Iterative</span> version
 <span class="variable">Map</span>&lt;<span class="variable">String</span>, <span class="variable">List</span>&lt;<span class="variable">Car</span>&gt;&gt; cars<span class="variable">ByBrand</span> = new <span class="variable">HashMap</span>&lt;<span class="variable">String</span>, <span class="variable">Car</span>&gt;();
 <span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Car</span> car : db.<span class="function_name">getCars</span>())</span> {
