@@ -172,7 +172,7 @@
                         <div class="markdown-wrapper">
                             <h3 id="toc_4">자바에서는 일반적으로 loop를 기반으로 컬렉션을 다룬다.</h3>
 <p><a href="http://daewon.github.com/post/next-generation-java-programming-style/">차세대 자바 프로그래밍 스타일</a>
-에서도 살펴본 것과 같이 loop가 컬렉션을 다루는 가장 좋은 방법이 아니다. loop는 코드의 가독성을 빠르게 망가뜨린다.
+에서도 살펴본 것과 같이 loop가 컬렉션을 다루는 가장 좋은 방법은 아니다. loop는 코드의 가독성을 빠르게 망가뜨린다.
 함수가 1급 객체인 언어들에서는 이러한 loop를 명시적으로 노출시키지 않고 <strong>고차 함수</strong> 로 추상화 사킨다. 
 이런 추상화 덕분에 컬렉션을 다루는 방법이 매우 간결하고 직관적이다.</p><p>자바에서도 함수형 스타일로 컬렉션을 다루고자 한 시도로 <a href="http://code.google.com/p/lambdaj/">lambdaj</a> 프로젝트가 있다. </p><p>lambdaj가 만들어진 이유는 다음과 같다</p>
 <blockquote>
@@ -273,10 +273,10 @@ List&lt;Sale&gt; buys = new ArrayList&lt;Sale&gt;();
 val youngestPerson: Person = db<span class="variable">.persons</span><span class="variable">.minBy</span>( _<span class="variable">.age</span> )
 val buys = db<span class="variable">.sales</span><span class="variable">.filter</span>( _<span class="variable">.buyer</span> == youngestPerson )
 </code></pre><p>반복 버전을 살펴보자. 
-단순하게 가장 어린 사람을 찾고, 이 사람과 나이가 같은 판매자를 찾기 위해서 불필요하게 많은 코드를 작성헸다.</p><p>함수형 버전을 살펴보자.
+가장 어린 사람을 찾고, 이 사람과 나이가 같은 판매자를 찾기 위해서 불필요하게 많은 코드를 작성헸다.</p><p>함수형 버전을 살펴보자.
 반복 버전에 비해서 코드가 극적으로 줄었다. minBy함수와 filter 함수를 사용해서 모든 명시적 loop을 감췄다.
-코드 그대로 읽어보자. 어린 사람을 찾고(db.persons.minBy( _.age )) 이 사람과 나이가 같은 판매자를 구해라(sales.filter( _.buyer == youngestPerson )) </p><p>코드에 그대로 원하는 바가 표현됬다. 여기서 주목할 점은 minBy 나 filter 와 같은 함수가 고차 함수로 구현되어 있다는 것이다.</p>
-<h4 id="toc_9">04. 가장 비싸게 판매한 Sale객체 찾아보자</h4>
+코드를 표현된 그대로 읽어보자. 가장 어린 사람을 찾고(db.persons.minBy( _.age )) 이 사람과 나이가 같은 판매자들을 걸러내라(sales.filter( _.buyer == youngestPerson )) </p><p>코드에 그대로 원하는 바가 표현됬다. 여기서 주목할 점은 minBy 나 filter 와 같은 함수가 고차 함수로 구현되어 있다는 것이다.</p>
+<h4 id="toc_9">04. 가장 비싸게 판매한 Sale객체를 찾아보자</h4>
 <pre><code class="java">// <span class="variable">Iterative</span> version
 double max<span class="variable">Cost</span> = <span class="number">0.0</span>;
 <span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Sale</span> sale : sales)</span> {
@@ -299,7 +299,7 @@ val maxCost = db<span class="variable">.sales</span><span class="variable">.maxB
 </code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
 val sum = db<span class="variable">.sales</span><span class="variable">.filter</span>(sale =&gt; sale<span class="variable">.buyer</span><span class="variable">.male</span> &amp;&amp; sale<span class="variable">.seller</span><span class="variable">.male</span>)<span class="variable">.map</span>(_<span class="variable">.cost</span>)<span class="variable">.sum</span>
 </code></pre><p>반복 버전을 살펴보자. 3번 예제와 거의 동일하게 loop을 순화하는 것을 확인할 수 있다. 위에서 설명했던 <strong>비지니스 객채의 순회를 반복한다</strong> 부분이 바로 이 부분이다.
-함수형 버전을 보면 이런 부분이 전부 감춰져 있음을 알 수 있다. </p>
+함수형 버전을 보면 이런 부분이 모두 감춰져 있음을 알 수 있다. </p>
 <h4 id="toc_11">06. 5000000원 이상을 구매한 가장 어린 사람을 찾아보자</h4>
 <pre><code class="java">// <span class="variable">Iterative</span> version
 int age = <span class="variable">Integer</span>.<span class="variable">MAX_VALUE</span>;
@@ -314,8 +314,8 @@ int age = <span class="variable">Integer</span>.<span class="variable">MAX_VALUE
 </code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
 val age = db<span class="variable">.sales</span><span class="variable">.filter</span>(_<span class="variable">.cost</span> &gt;= <span class="number">50000000</span>)<span class="variable">.minBy</span>(_<span class="variable">.buyer</span><span class="variable">.age</span>)<span class="variable">.buyer</span><span class="variable">.age</span>
 </code></pre><p>반복 버전을 살펴보자. 한 루프에 여러가지 조건이 섞여있다. 
-50,000 이상에 값을 가지는 세일 객체 중에서 바이어에 나이가 가장 어린 사람을 찾는 코드라는 것을 한눈에 알 수 있을까?</p><p>함수형 버전을 살펴보자.
-세일 객체 목록에서 가격이 50000000이상인 값을 추린 목록에서 가장 작은 값을 바이어에 나이로 구했다. 한눈에 코드가 원하는 것을 알 수 있다.</p>
+50,000 이상에 값을 가지는 Sale 객체 중에서 buyer 나이가 가장 어린 사람을 찾는 코드라는 것을 한눈에 알 수 있을까?</p><p>함수형 버전을 살펴보자.
+Sale 객체 목록에서 가격이 50000000이상인 값을 추린 목록에서 가장 작은 값을 buyer에 나이로 구했다. 한눈에 코드가 원하는 것을 알 수 있다.</p>
 <h4 id="toc_12">07. Sale 객체 목록을 를 가격 순으로 정렬해 보자</h4>
 <pre><code class="java">// Iterative version
 List<span class="tag">&lt;<span class="title">Sale</span>&gt;</span> sortedSales = new ArrayList<span class="tag">&lt;<span class="title">Sale</span>&gt;</span>(sales);
@@ -336,8 +336,8 @@ val sortedSales = db<span class="variable">.sales</span><span class="variable">.
 }
 </code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
 val costs = db<span class="variable">.cars</span><span class="variable">.map</span>(_<span class="variable">.originalValue</span>)
-</code></pre><p>map함수는 함수형 언어에서 굉장히 많이 사용되는 함수다. 일반적으로 A 목록으로부터 함수 F를 적용한 목록 B를 생성한다. 
-cars목록으로부터 originalValue를 추출하는 함수를 적용해서 cost목록을 생성한다.</p>
+</code></pre><p>map함수는 함수형 언어에서 굉장히 많이 사용되는 함수다. map 함수는 A 목록으로부터 함수 F를 적용한 목록 B를 생성한다. 
+cars목록으로부터 originalValue를 추출하는 함수를 적용해서 cost목록을 생성했다.</p>
 <h4 id="toc_14">09. Car 객체 목록을 brand로 그루핑 해 보자</h4>
 <pre><code class="java">// <span class="variable">Iterative</span> version
 <span class="variable">Map</span>&lt;<span class="variable">String</span>, <span class="variable">List</span>&lt;<span class="variable">Car</span>&gt;&gt; cars<span class="variable">ByBrand</span> = new <span class="variable">HashMap</span>&lt;<span class="variable">String</span>, <span class="variable">Car</span>&gt;();
@@ -353,7 +353,7 @@ cars목록으로부터 originalValue를 추출하는 함수를 적용해서 cost
 val carsByBrand = db<span class="variable">.cars</span><span class="variable">.groupBy</span>(_<span class="variable">.brand</span>)
 </code></pre><p>반복 버전이 하는 일을 살펴보자. 같은 브랜드를 가진 차들의 목록을 그루핑 하는 코드다 한눈에 보이는가?
 함수형 버전을 보면 원하는 목적이 선언적으로 표현되어 있음을 알 수 있다.</p>
-<h4 id="toc_15">10. 세일즈 객체 목록을 buyers 와 sellers 로 그루핑 해 보자</h4>
+<h4 id="toc_15">10. Sale 객체 목록을 buyers 와 sellers 로 그루핑 해 보자</h4>
 <pre><code class="java">// <span class="variable">Iterative</span> version
 <span class="variable">Map</span>&lt;<span class="variable">Person</span>,<span class="variable">Map</span>&lt;<span class="variable">Person</span>,<span class="variable">Sale</span>&gt;&gt; map = new <span class="variable">HashMap</span>&lt;<span class="variable">Person</span>,<span class="variable">Map</span>&lt;<span class="variable">Person</span>,<span class="variable">Sale</span>&gt;&gt;();
 <span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Sale</span> sale : sales)</span> {
@@ -384,8 +384,8 @@ val map = db<span class="variable">.sales</span><span class="variable">.groupBy<
 val youngest = db<span class="variable">.persons</span><span class="variable">.minBy</span>(_<span class="variable">.age</span>)
 val oldest = db<span class="variable">.persons</span><span class="variable">.maxBy</span>(_<span class="variable">.age</span>)
 val saleFromYoungestToOldest = map(youngest)(oldest)
-</code></pre><p>반복 버전을 살펴보자. 한눈에 알아보기엔 코드가 너무 어렵다. 목적 자체가 코드에 잘 드러나지 않기 때문이다. 한번 천천히 읽어보자. 구하려는 목적에 비해서 코드가 지나치게 질다는 것을 느낄 수 있다.
-함수형 버전을 살펴보자. </p><p>차이가 큰 부분을 보면 가장 어린 사람과 늙은 사람을 구하는 부분이 함수형 코드에서는 2 라인으로 분리가 되어 있으나 반복형 버전에는 한 루프 안에서 이 둘을 모두 구하려고 하고 있다.
+</code></pre><p>반복 버전을 살펴보자. 한눈에 알아보기엔 코드가 너무 어렵다. 목적 자체가 코드에 잘 드러나지 않기 때문이다. 한번 천천히 읽어보자. 구하려는 목적에 비해서 코드가 지나치게 길다는 것을 느낄 수 있다.</p><p>함수형 버전을 살펴보자. 
+차이가 큰 부분을 보면 가장 어린 사람과 늙은 사람을 구하는 부분이 함수형 코드에서는 2 라인으로 분리가 되어 있으나 반복형 버전에는 한 루프 안에서 이 둘을 모두 구하려고 하고 있다.
 반복형 버전이 약간의 속도적 이득은 있겠지만 가독성이라는 면에서는 비교가 되지 않을 정도로 함수형 버전이 명료하다. 단순하게 코드가 짧은게 아니라 원하는 목적을 정확하게 표현하고 있기 때문이다.</p>
 <h4 id="toc_16">11. 가장 많이 구매한 차를 구해보자</h4>
 <pre><code class="java">// <span class="variable">Iterative</span> version
@@ -411,7 +411,7 @@ val boughtTimes = carsBought(mostBoughtCar)
 </code></pre><p>마지막 예제다. 역시 반복형 버전에 비해서 함수형 버전이 짧고 간결하다.</p>
 <h4 id="toc_17">고차 함수는 컬렉션을 다루는 탁월한 방법이다.</h4>
 <p>위 예에서 살펴볼 수 있듯이 고차 함수를 사용하면 컬렉션을 훨씬 직관적으로 다룰 수 있다.
-groupBy, map, filter, maxBy, minBy 등과 같은 함수들은 모두 함수를 인자로 받는 고차 함수다. 
+함수형 언어들에서 컬렉션을 다루는 방법인 groupBy, map, filter, maxBy, minBy 등과 같은 함수들은 모두 함수를 인자로 받는 고차 함수다. 
 함수를 인자로 받기 때문에 컬렉션에 원소에 구애받지 않고 코드를 추상화 할 수 있으며, 이런 높은 수준의 추상화는 많은 부분에서 코드를 읽기 좋게 만든다.</p>
                         </div>
                         <hr />
