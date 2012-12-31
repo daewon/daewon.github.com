@@ -275,7 +275,7 @@ val buys = db<span class="variable">.sales</span><span class="variable">.filter<
 </code></pre><p>반복 버전을 살펴보자. 
 단순하게 가장 어린 사람을 찾고, 이 사람과 나이가 같은 판매자를 찾기 위해서 불필요하게 많은 코드를 작성헸다.</p><p>함수형 버전을 살펴보자.
 반복 버전에 비해서 코드가 극적으로 줄었다. minBy함수와 filter 함수를 사용해서 모든 명시적 loop을 감췄다.
-코드 그대로 읽어보자. 어린 사람을 찾고(db.persons.minBy( _.age )) 이 사람과 나이가 같은 판매자를 구해라(sales.filter( _.buyer == youngestPerson )) </p><p>코드에 그대로 원하는 바가 표현됬다. 여기서 목할 점은 minBy 나 filter 와 같은 함수가 고차 함수로 구현되어 있다는 것이다.</p>
+코드 그대로 읽어보자. 어린 사람을 찾고(db.persons.minBy( _.age )) 이 사람과 나이가 같은 판매자를 구해라(sales.filter( _.buyer == youngestPerson )) </p><p>코드에 그대로 원하는 바가 표현됬다. 여기서 주목할 점은 minBy 나 filter 와 같은 함수가 고차 함수로 구현되어 있다는 것이다.</p>
 <h4 id="toc_9">04. 가장 비싸게 판매한 Sale객체 찾아보자</h4>
 <pre><code class="java">// <span class="variable">Iterative</span> version
 double max<span class="variable">Cost</span> = <span class="number">0.0</span>;
@@ -287,7 +287,7 @@ double max<span class="variable">Cost</span> = <span class="number">0.0</span>;
 }
 </code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
 val maxCost = db<span class="variable">.sales</span><span class="variable">.maxBy</span>(_<span class="variable">.cost</span>)<span class="variable">.cost</span>
-</code></pre><p>03번에서 설명했던 것과 같다. 함수형 버전은 보다 선언적인 방법으로 목표에 도달했다.</p>
+</code></pre><p>3번 예제에서 설명했던 것과 같다. 함수형 버전은 보다 선언적인 방법으로 목표에 도달했다.</p>
 <h4 id="toc_10">05. 남자가 남자에게 차를 판매한 것에 대한 총 합을 구해보자</h4>
 <pre><code class="java"><span class="comment">// Iterative version</span>
 <span class="keyword">double</span> sum = <span class="number">0.0</span>;
