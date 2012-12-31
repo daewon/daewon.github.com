@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>No more loops with Scala |  daewon's log</title>
+    <meta name="description" content="about Programming languages">
+    <meta name="author" content="daewon">
+    <meta name="keywords" content="javascript,scala,node" />
+    <meta name="generator" content="haroopress v0.9.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="/rss.xml" rel="alternate" title="daewon's log" type="application/rss+xml">
+
+    <!-- Le styles -->
+    <link rel="canonical" href="http://daewon.github.com">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/markdown.css" rel="stylesheet">
+    <link href="/css/haroopress.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/code/xcode.css" rel="stylesheet">
+    
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon-64.png">
+
+    <!-- Le javascript -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.jsonp.js"></script>
+    <script src="/js/mustache.js"></script>
+    <script src="/js/apps/github.js"></script>
+    <script src="/js/apps/twitter.js"></script>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+        <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <a class="pull-right" href="/rss.xml"><span class="icon-rss"></span></a>
+          
+            <a class="pull-right" href="http://twitter.com/blueiur" target="_blank"><span class="icon-twitter"></span></a>
+          
+
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/archives">Archives</a>
+              </li>
+              <!-- <li> -->
+              <!--   <a href="/slides">Slides</a> -->
+              <!-- </li> -->
+                
+                    <li>
+                        <a href="/coursera-dot-o-rg/">Coursera.org</a>
+                    </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+<link href="/css/code/xcode.css" rel="stylesheet">
+<div class="container page-archive">
+    <div class="row">
+        <div class="span3">
+            <div id="author" class="well">
+                <div>
+                    <h3>About Author</h3>
+                    <ul class="thumbnails">
+                        <li>
+                            <a class="thumbnail">
+                                <img src="http://www.gravatar.com/avatar/201e7a836b57569bf241ddd73d90c3bf?r=pg&amp;s=128.jpg&amp;d=identicon" />
+                            </a>
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>daewon</strong><br/>
+                        blog: <a href="http://daewon.github.com" target="_blank">http://daewon.github.com</a><br/>
+                        twitter: <a href="http://twitter.com/blueiur" target="_blank">@blueiur</a><br/>
+                        github: <a href="https://github.com/daewon" target="_blank">daewon</a>
+                    </p>
+                    <p>
+                        <a href="https://twitter.com/blueiur" class="twitter-follow-button" data-show-count="true">Follow @blueiur</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </p>
+                    <p>
+                        <p><a href="http://about.me/daewon">about.me/daewon</a></p><p><a href="http://synapsoft.co.kr">사이냅소프트 근무</a></p><p><a href="http://office.naver.com">웹오피스 개발</a></p>
+                    </p>
+                </div>
+                <div>
+                    <h3>About this Article</h3>
+                    <p>
+                        <h5>Date Released:</h5>
+                        <span>Monday, December 31 2012 2:00 AM</span>
+                    </p>
+                </div>
+            </div>
+                        <div class="well">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Categories</li>
+                    <li class=""><a href="/category"><i class="icon-home"></i> Home</a></li>
+                    
+                    <li><a href="/category/javascript"><i class="icon-book"></i> javascript</a></li>
+                    
+                    <li><a href="/category/scala"><i class="icon-book"></i> scala</a></li>
+                    
+                    <li><a href="/category/java"><i class="icon-book"></i> java</a></li>
+                    
+                </ul>
+            </div>
+
+            
+<div class="well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Recent Articles</li>
+    
+        <li>
+            <a href="/post/from-java-to-scala-scala-collections-hwalyong" target="_blank">No more loops with Scala
+            <span class="label">daewon</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/Array.prototype.map_with_parseInt" target="_blank">What's the result of [1, 2, 3].map(parseInt)
+            <span class="label">daewon</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/next-generation-java-programming-style" target="_blank">Next generation Java Programming Style
+            <span class="label">daewon</span></a>
+        </li>
+    
+    </ul>
+</div>
+
+        </div>
+        <div class="span9">
+            <div class="row">
+                <div class="span9">
+                    <div class="well bg">
+                        
+                        <div class="page-header">
+                            <h1>No more loops with Scala</h1>
+                        </div>
+
+                        <div class="pull-right social-area">
+                                                
+                                                
+
+                            
+                        </div>
+
+                        <div class="markdown-wrapper">
+                            <h3 id="toc_4">자바에서는 일반적으로 loop를 기반으로 컬렉션을 다룬다.</h3>
+<p><a href="http://daewon.github.com/post/next-generation-java-programming-style/">차세대 자바 프로그래밍 스타일</a>
+에서도 살펴본 것과 같이 loop가 컬렉션을 다루는 가장 좋은 방법이 아니다. loop는 코드의 가독성을 빠르게 망가뜨린다.
+함수가 1급 객체인 언어들에서는 이러한 loop를 명시적으로 노출시키지 않고 <strong>고차 함수</strong> 로 추상화 사킨다. 
+이런 추상화 덕분에 컬렉션을 다루는 방법이 매우 간결하고 직관적이다.</p><p>자바에서도 함수형 스타일로 컬렉션을 다루고자 한 시도로 <a href="http://code.google.com/p/lambdaj/">lambda J</a> 프로젝트가 있다. </p><p>lambdaj가 만들어진 이유는 다음과 같다</p>
+<blockquote>
+<p>복잡한 데이터 모델을 다루는 프로젝트에서 비즈니스 로직의 상당 부분은
+어떤 작업을 위해서 비지니스 객체의 컬렉션을 순회하는 일의 반복이다. 
+loop는 조건이 추가되거나 중첩되기 시작하면 코드를 작성하는것 보다 읽기가 더 어려워진다. 
+그렇기 때문에 비지니스 로직이 조금 더 기술적인 부분과 분리되어 작성되기를 원한다.</p></blockquote>
+<p><iframe src="http://www.slideshare.net/slideshow/embed_code/6688488?startSlide=1" width="350" height="285" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe></p><p>lambdaj를 사용하면 비교적 선언적 스타일로 loop를 추상화 할 수 있지만 자바 문화에는 이런 코딩 방법을 장려하지 않는다. </p><p>고차 함수를 통한 추상화와 고차 함수가 일반적인 언어인 Scala를 사용해서 lambdaj에서 목표로 하는 부분을 하나씩 풀어보자.</p>
+<h4 id="toc_5">먼저 예제에서 사용할 데이터 모델을 정의해 보자.</h4>
+<p><img src="@img/dataModel.png" alt="Demo Data Model"></p><pre><code class="scala"><span class="javadoc">/**
+ * 데모에서 사용할 데이터 모델
+ * 사람, 판매, 차 객체가 있으며 각 클래스는 위 그림과 같은 관계를 가지고 있다.
+ */</span>
+
+<span class="class"><span class="keyword">case</span> <span class="keyword">class</span> <span class="title">Person</span><span class="params">(firstName: String, lastName: String, age:Int, male: Boolean)</span></span>
+<span class="class"><span class="keyword">case</span> <span class="keyword">class</span> <span class="title">Sale</span><span class="params">(buyer: Person, seller: Person, car: Car, cost: Double)</span></span>
+<span class="class"><span class="keyword">case</span> <span class="keyword">class</span> <span class="title">Car</span><span class="params">(brand: String, model: String, year: Int, originalValue: Double)</span></span>
+
+<span class="class"><span class="keyword">object</span> <span class="title">db</span> {</span>
+
+    <span class="comment">// cars</span>
+    <span class="keyword">val</span> sonata = Car(<span class="string">"Hyundai"</span>, <span class="string">"Sonata"</span>, <span class="number">1982</span>, <span class="number">30000000</span>)
+    <span class="keyword">val</span> santafe = Car(<span class="string">"Hyundai"</span>, <span class="string">"Santafe"</span>, <span class="number">1990</span>, <span class="number">50000000</span>)
+    <span class="keyword">val</span> k7 = Car(<span class="string">"KIA"</span>, <span class="string">"K7"</span>, <span class="number">2000</span>, <span class="number">50000000</span>)
+    <span class="keyword">val</span> k9 = Car(<span class="string">"KIA"</span>, <span class="string">"K9"</span>, <span class="number">2008</span>, <span class="number">70000000</span>)
+    <span class="keyword">val</span> orlando = Car(<span class="string">"GM"</span>, <span class="string">"Orlando"</span>, <span class="number">2011</span>, <span class="number">30000000</span>)
+    <span class="keyword">val</span> chevrolet = Car(<span class="string">"GM"</span>, <span class="string">"Chevrolet"</span>, <span class="number">2010</span>, <span class="number">50000000</span>)
+    <span class="keyword">val</span> alpheon = Car(<span class="string">"GM"</span>, <span class="string">"Alpheon"</span>, <span class="number">2012</span>, <span class="number">70000000</span>)
+
+    <span class="keyword">def</span> cars = List(sonata, santafe, k7, k9, orlando, chevrolet, alpheon);
+
+    <span class="comment">// persons</span>
+    <span class="keyword">val</span> daewon = Person(<span class="string">"daewon"</span>, <span class="string">"jeong"</span>, <span class="number">31</span>, <span class="keyword">true</span>)
+    <span class="keyword">val</span> youngtek = Person(<span class="string">"youngtek"</span>, <span class="string">"hong"</span>, <span class="number">32</span>, <span class="keyword">true</span>)
+    <span class="keyword">val</span> jiwong = Person(<span class="string">"jiwong"</span>, <span class="string">"kang"</span>, <span class="number">34</span>, <span class="keyword">true</span>)
+    <span class="keyword">val</span> taehee = Person(<span class="string">"taehee"</span>, <span class="string">"kim"</span>, <span class="number">32</span>, <span class="keyword">false</span>)
+    <span class="keyword">def</span> persons: List[Person] = List(youngtek, daewon, jiwong, taehee)
+
+
+    <span class="comment">// sales</span>
+    <span class="keyword">def</span> sales: List[Sale] = List(Sale(daewon, taehee, sonata, <span class="number">30000000</span>),
+        Sale(daewon, youngtek, santafe, <span class="number">50000000</span>),
+        Sale(daewon, jiwong, santafe, <span class="number">50000000</span>),
+        Sale(jiwong, taehee, santafe, <span class="number">50000000</span>),
+        Sale(taehee, daewon, chevrolet, <span class="number">50000000</span>),
+        Sale(youngtek, daewon, chevrolet, <span class="number">50000000</span>),
+        Sale(youngtek, taehee, orlando, <span class="number">30000000</span>),
+        Sale(taehee, jiwong, chevrolet, <span class="number">30000000</span>))
+}
+</code></pre>
+<h4 id="toc_6">01. Car 목록에서 모든 brand를 출력해 보자</h4>
+<pre><code class="java">// <span class="variable">Iterative</span> version
+<span class="variable">StringBuilder</span> sb = new <span class="variable">StringBuilder</span>();
+<span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Car</span> car : db.<span class="function_name">getCars</span>())</span> {
+  <span class="title">db</span>.<span class="title">append</span><span class="params">(car.<span class="function_name">getBrand</span>())</span>.<span class="title">append</span><span class="params">(<span class="string">", "</span>)</span>;
+  S<span class="title">tring</span> <span class="title">brands</span> = <span class="title">sb</span>.<span class="title">toString</span><span class="params">()</span>.<span class="title">substring</span><span class="params">(<span class="number">0</span>, sb.<span class="function_name">length</span>()-<span class="number">2</span>)</span>;
+}
+</code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
+val allcarBrands = db<span class="variable">.cars</span> map(_<span class="variable">.brand</span>) mkString(<span class="string">", "</span>)
+</code></pre><p>반복 버전에 코드를 살펴보자. 
+비교적 짧은 코드지만 여러가지 일을 하고 있다. 
+왜 sb.length() -2 라는 함수가 호출될가? 혹시 구분자에서 &#39;,&#39; 와 같이 공백을 없애면 어떻게 될가?
+불필요하게 읽어야 하는 코드가 많다. 우리가 원하는 것은 Car 목록에 모든 brand를 &#39;, &#39; 구분자로 묶어서 출력하는 것이다.</p><p>함수형 버전을 살펴보자.
+Car 목록으로부터 brand목록을 만들고 이 목록을 &#39;, &#39; 구분자로 묶어서 문자열을 만들었다. 
+반복 버전에 비해서 코드가 선언적이기 때문에 코드가 하고자 하는 일을 빠르게 알아챌 수 있다.</p>
+<h4 id="toc_7">02. Hyundai 차를 판매하는 모든 Sale객체를 선택해 보자</h4>
+<pre><code class="java">// <span class="variable">Iterative</span> version
+// <span class="variable">Select</span> all sales <span class="keyword">of</span> a <span class="variable">Ferrari</span>
+<span class="variable">List</span>&lt;<span class="variable">Sale</span>&gt; sales<span class="variable">OfAFerrari</span> = new <span class="variable">ArrayList</span>&lt;<span class="variable">Sale</span>&gt;();
+<span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Sale</span> sale : sales)</span> {
+  <span class="title">if</span> <span class="params">(sale.<span class="function_name">getCar</span>().<span class="function_name">getBrand</span>().<span class="function_name">equals</span>(<span class="string">"Ferrari"</span>))</span> {
+    <span class="title">salesOfAFerrari</span>.<span class="title">add</span><span class="params">(sale)</span>;
+  }
+}
+</code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
+val salesOfHyundai = db<span class="variable">.sales</span><span class="variable">.filter</span>(_<span class="variable">.car</span><span class="variable">.brand</span> == <span class="string">"Hyundai"</span>)
+</code></pre><p>반복 버전을 살펴보자.
+Ferrari 브랜드를 가진 Sale객체를 찾기 위해서 Sale객체를 loop으로 순회하면서 brand가 &#39;Ferrari&#39;인지를 비교한다.</p><p>함수형 버전을 살펴보자.
+filter함수와 술어 함수를 사용해서 loop와 if 부분을 암묵적으로 처리했다. 코드를 읽어보자. 코드와 구하려는 목적이 1:1로 일치한다.</p>
+<h4 id="toc_8">03. 가장 어린 사람과 나이가 같은 판매자들 찾아보자</h4>
+<pre><code class="java"><span class="comment">// Iterative version</span>
+<span class="comment">// find youngest person in persons</span>
+Person youngest = null;
+<span class="keyword">for</span> (Person person : persons){
+  <span class="keyword">if</span> (youngest == null || person<span class="variable">.getAge</span>() &lt; youngest<span class="variable">.getAge</span>()) {
+    youngest = person;
+  }
+}
+
+<span class="comment">// find buyer have age equal to younggest person</span>
+List&lt;Sale&gt; buys = new ArrayList&lt;Sale&gt;();
+<span class="keyword">for</span> (Sale sale : sales){
+  <span class="keyword">if</span> (sale<span class="variable">.getBuyer</span>()<span class="variable">.equals</span>(youngest)) {
+    buys<span class="variable">.add</span>(sale);
+  }
+}
+</code></pre><pre><code class=""><span class="comment">// Functional version</span>
+val youngestPerson: Person = db<span class="variable">.persons</span><span class="variable">.minBy</span>( _<span class="variable">.age</span> )
+val buys = db<span class="variable">.sales</span><span class="variable">.filter</span>( _<span class="variable">.buyer</span> == youngestPerson )
+</code></pre><p>반복 버전을 살펴보자. 
+단순하게 가장 어린 사람을 찾고, 이 사람과 나이가 같은 판매자를 찾기 위해서 불필요하게 많은 코드를 작성헸다.</p><p>함수형 버전을 살펴보자.
+반복 버전에 비해서 코드가 극적으로 줄었다. minBy함수와 filter 함수를 사용해서 모든 명시적 loop을 감췄다.
+코드 그대로 읽어보자. 어린 사람을 찾고(db.persons.minBy( _.age )) 이 사람과 나이가 같은 판매자를 구해라(sales.filter( _.buyer == youngestPerson )) </p><p>코드에 그대로 원하는 바가 표현됬다. 여기서 목할 점은 minBy 나 filter 와 같은 함수가 고차 함수로 구현되어 있다는 것이다.</p>
+<h4 id="toc_9">04. 가장 비싸게 판매한 Sale객체 찾기</h4>
+<pre><code class="java">// <span class="variable">Iterative</span> version
+double max<span class="variable">Cost</span> = <span class="number">0.0</span>;
+<span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Sale</span> sale : sales)</span> {
+  <span class="title">double</span> <span class="title">cost</span> = <span class="title">sale</span>.<span class="title">getCost</span><span class="params">()</span>;
+  <span class="title">if</span> <span class="params">(cost &gt; max<span class="variable">Cost</span>)</span> {
+    <span class="title">maxCost</span> = <span class="title">cost</span>;
+  }
+}
+</code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
+val maxCost = db<span class="variable">.sales</span><span class="variable">.maxBy</span>(_<span class="variable">.cost</span>)<span class="variable">.cost</span>
+</code></pre><p>03번에서 설명했던 것과 같다. 함수형 버전은 보다 선언적인 방법으로 목표에 도달했다.</p>
+<h4 id="toc_10">05. 남자가 남자에게 차를 판매한 것에 대한 총 합 구하기</h4>
+<pre><code class="java"><span class="comment">// Iterative version</span>
+<span class="keyword">double</span> sum = <span class="number">0.0</span>;
+  <span class="keyword">for</span> (Sale sale : sales) {
+    <span class="keyword">if</span> (sale<span class="variable">.getBuyer</span>()<span class="variable">.isMale</span>() &amp;&amp; sale<span class="variable">.getSeller</span>()<span class="variable">.isMale</span>()) {
+      sum += sale<span class="variable">.getCost</span>();
+    }
+}
+</code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
+val sum = db<span class="variable">.sales</span><span class="variable">.filter</span>(sale =&gt; sale<span class="variable">.buyer</span><span class="variable">.male</span> &amp;&amp; sale<span class="variable">.seller</span><span class="variable">.male</span>)<span class="variable">.map</span>(_<span class="variable">.cost</span>)<span class="variable">.sum</span>
+</code></pre><p>1~5번까지 예를 보면 모든 반복 버전은 동일한 loop을 수행하고 있다는 것을 알 수 있다. </p>
+<h4 id="toc_11">06. Find age of youngest who bought for more than 50,000</h4>
+<pre><code class="java">// <span class="variable">Iterative</span> version
+int age = <span class="variable">Integer</span>.<span class="variable">MAX_VALUE</span>;
+<span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Sale</span> sale : sales)</span> {
+  <span class="title">if</span> <span class="params">(sale.<span class="function_name">getCost</span>() &gt; <span class="number">50000.00</span>)</span> {
+    <span class="title">int</span> <span class="title">buyerAge</span> = <span class="title">sale</span>.<span class="title">getBuyer</span><span class="params">()</span>.<span class="title">getAge</span><span class="params">()</span>;
+    <span class="title">if</span> <span class="params">(buyer<span class="variable">Age</span> &lt; age)</span> {
+      <span class="title">age</span> = <span class="title">buyerAge</span>;
+    }
+  }
+}
+</code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
+val age = db<span class="variable">.sales</span><span class="variable">.filter</span>(_<span class="variable">.cost</span> &gt;= <span class="number">50000000</span>)<span class="variable">.minBy</span>(_<span class="variable">.buyer</span><span class="variable">.age</span>)<span class="variable">.buyer</span><span class="variable">.age</span>
+</code></pre><p>반복 버전을 살펴보자. 한 루프에 여러가지 조건이 섞여있다. 
+50,000 이상에 값을 가지는 세일 객체 중에서 바이어에 나이가 가장 어린 사람을 찾는 코드라는 것을 한눈에 알 수 있을까?</p><p>함수형 버전을 살펴보자.
+세일 객체 목록에서 가격이 50000000이상인 값을 추린 목록에서 가장 작은 값을 바이어에 나이로 구했다. 한눈에 코드가 원하는 것을 알 수 있다.</p>
+<h4 id="toc_12">07. Sale 객체 목록을 를 가격 순으로 정렬해 보자</h4>
+<pre><code class="java">// Iterative version
+List<span class="tag">&lt;<span class="title">Sale</span>&gt;</span> sortedSales = new ArrayList<span class="tag">&lt;<span class="title">Sale</span>&gt;</span>(sales);
+Collections.sort(sortedSales, new Comparator<span class="tag">&lt;<span class="title">Sale</span>&gt;</span>() {
+  public int compare(Sale s1, Sale s2) {
+    return Double.valueOf(s1.getCost()).compareTo(s2.getCost());
+  }
+});
+</code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
+val sortedSales = db<span class="variable">.sales</span><span class="variable">.sortBy</span>(_<span class="variable">.cost</span>)
+</code></pre><p>반복 버전도 충분히 깔끔하지만, 뭐랄까 조금 코드가 너저분 하다. 자바가 익명 함수를 지원하지 않기 때문에 익명 객체를 생성해서 이를 처리했기 때문이다.
+함수형 버전은 같은 목표를 훨씬 적은 양의 코드로 해결했다.</p>
+<h4 id="toc_13">08. 차 객체에서 original cost를 가져와서 새로운 리스트 생성</h4>
+<pre><code class="java"><span class="comment">// Iterative version</span>
+List&lt;Double&gt; costs = new ArrayList&lt;Double&gt;();
+<span class="keyword">for</span> (Car car : cars) {
+  costs<span class="variable">.add</span>(car<span class="variable">.getOriginalValue</span>());
+}
+
+~~~scala
+<span class="comment">// Functional version</span>
+val costs = db<span class="variable">.cars</span><span class="variable">.map</span>(_<span class="variable">.originalValue</span>)
+</code></pre><p>map함수는 함수형 언어에서 굉장히 많이 사용되는 함수다. 일반적으로 A 목록으로부터 함수 F를 적용한 목록 B를 생성한다. 
+cars목록으로부터 originalValue를 추출하는 함수를 적용해서 cost목록을 생성한다.</p>
+<h4 id="toc_14">09. 차 객체 목록을 brand로 그루핑</h4>
+<pre><code class="java">// <span class="variable">Iterative</span> version
+<span class="variable">Map</span>&lt;<span class="variable">String</span>, <span class="variable">List</span>&lt;<span class="variable">Car</span>&gt;&gt; cars<span class="variable">ByBrand</span> = new <span class="variable">HashMap</span>&lt;<span class="variable">String</span>, <span class="variable">Car</span>&gt;();
+<span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Car</span> car : db.<span class="function_name">getCars</span>())</span> {
+  L<span class="title">ist</span>&lt;C<span class="title">ar</span>&gt; <span class="title">carList</span> = <span class="title">carsByBrand</span>.<span class="title">get</span><span class="params">(car)</span>;
+  <span class="title">if</span> <span class="params">(car<span class="variable">List</span> == null)</span>{
+      <span class="title">carList</span> = <span class="title">new</span> A<span class="title">rrayList</span>&lt;C<span class="title">ar</span>&gt;<span class="params">()</span>;
+      <span class="title">carsByBrand</span>.<span class="title">put</span><span class="params">(car.<span class="function_name">getBrand</span>(), car<span class="variable">List</span>)</span>;
+  }
+  <span class="title">carList</span>.<span class="title">add</span><span class="params">(car)</span>;
+}
+</code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
+val carsByBrand = db<span class="variable">.cars</span><span class="variable">.groupBy</span>(_<span class="variable">.brand</span>)
+</code></pre><p>반복 버전이 하는 일을 살펴보자. 같은 브랜드를 가진 차들의 목록을 그루핑 하는 코드다 한눈에 보이는가?
+함수형 버전을 보면 원하는 목적이 선언적으로 표현되어 있음을 알 수 있다.</p>
+<h4 id="toc_15">10. 세일즈 객체 목록을 buyers 와 sellers 로 그루핑</h4>
+<pre><code class="java">// <span class="variable">Iterative</span> version
+<span class="variable">Map</span>&lt;<span class="variable">Person</span>,<span class="variable">Map</span>&lt;<span class="variable">Person</span>,<span class="variable">Sale</span>&gt;&gt; map = new <span class="variable">HashMap</span>&lt;<span class="variable">Person</span>,<span class="variable">Map</span>&lt;<span class="variable">Person</span>,<span class="variable">Sale</span>&gt;&gt;();
+<span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Sale</span> sale : sales)</span> {
+  P<span class="title">erson</span> <span class="title">buyer</span> = <span class="title">sale</span>.<span class="title">getBuyer</span><span class="params">()</span>;
+  M<span class="title">ap</span>&lt;P<span class="title">erson</span>, S<span class="title">ale</span>&gt; <span class="title">buyerMap</span> = <span class="title">map</span>.<span class="title">get</span><span class="params">(buyer)</span>;
+  <span class="title">if</span> <span class="params">(buyer<span class="variable">Map</span> == null)</span> {
+    <span class="title">buyerMap</span> = <span class="title">new</span> H<span class="title">ashMap</span>&lt;P<span class="title">erson</span>, S<span class="title">ale</span>&gt;<span class="params">()</span>;
+    <span class="title">map</span>.<span class="title">put</span><span class="params">(buyer, buyer<span class="variable">Map</span>)</span>;
+  }
+  <span class="title">buyerMap</span>.<span class="title">put</span><span class="params">(sale.<span class="function_name">getSeller</span>(), sale)</span>;
+}
+
+P<span class="title">erson</span> <span class="title">youngest</span> = <span class="title">null</span>;
+P<span class="title">erson</span> <span class="title">oldest</span> = <span class="title">null</span>;
+<span class="title">for</span> <span class="params">(<span class="variable">Person</span> person : persons)</span> {
+  <span class="title">if</span> <span class="params">(youngest == null || person.<span class="function_name">getAge</span>() &lt; youngest.<span class="function_name">getAge</span>())</span>{
+    <span class="title">youngest</span> = <span class="title">person</span>;
+  }
+  <span class="title">if</span> <span class="params">(oldest == null || person.<span class="function_name">getAge</span>() &gt; oldest.<span class="function_name">getAge</span>())</span> {
+    <span class="title">oldest</span> = <span class="title">person</span>;
+  }
+}
+
+S<span class="title">ale</span> <span class="title">saleFromYoungestToOldest</span> = <span class="title">map</span>.<span class="title">get</span><span class="params">(youngest)</span>.<span class="title">get</span><span class="params">(oldest)</span>;
+
+</code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
+val map = db<span class="variable">.sales</span><span class="variable">.groupBy</span>(_<span class="variable">.buyer</span>)<span class="variable">.mapValues</span>(ls =&gt; ls<span class="variable">.groupBy</span>(_<span class="variable">.seller</span>)<span class="variable">.mapValues</span>(_<span class="variable">.head</span>))
+val youngest = db<span class="variable">.persons</span><span class="variable">.minBy</span>(_<span class="variable">.age</span>)
+val oldest = db<span class="variable">.persons</span><span class="variable">.maxBy</span>(_<span class="variable">.age</span>)
+val saleFromYoungestToOldest = map(youngest)(oldest)
+</code></pre><p>반복 버전을 살펴보자. 한눈에 알아보기엔 코드가 너무 어렵다. 목적 자체가 코드에 잘 드러나지 않기 때문이다. 한번 천천히 읽어보자. 구하려는 목적에 비해서 코드가 지나치게 질다는 것을 느낄 수 있다.
+함수형 버전을 살펴보자. </p><p>차이가 큰 부분을 보면 가장 어린 사람과 늙은 사람을 구하는 부분이 함수형 코드에서는 2 라인으로 분리가 되어 있으나 반복형 버전에는 한 루프 안에서 이 둘을 모두 구하려고 하고 있다.
+반복형 버전이 약간의 속도적 이득은 있겠지만 가독성이라는 면에서는 비교가 되지 않을 정도로 함수형 버전이 명료하다. 단순하게 코드가 짧은게 아니라 원하는 목적을 정확하게 표현하고 있기 때문이다.</p>
+<h4 id="toc_16">11. 가장 많이 구매한 차 구하기</h4>
+<pre><code class="java">// <span class="variable">Iterative</span> version
+<span class="variable">Map</span>&lt;<span class="variable">Car</span>, <span class="variable">Integer</span>&gt; cars<span class="variable">Bought</span> = new <span class="variable">HashMap</span>&lt;<span class="variable">Car</span>, <span class="variable">Integer</span>&gt;();
+<span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Sale</span> sale : sales)</span> {
+  C<span class="title">ar</span> <span class="title">car</span> = <span class="title">sale</span>.<span class="title">getCar</span><span class="params">()</span>;
+  I<span class="title">nteger</span> <span class="title">boughtTimes</span> = <span class="title">carsBought</span>.<span class="title">get</span><span class="params">(car)</span>;
+  <span class="title">carsBought</span>.<span class="title">put</span><span class="params">(car, bought<span class="variable">Times</span> == null ? <span class="number">1</span> : bought<span class="variable">Times</span>+<span class="number">1</span>)</span>;
+}
+
+C<span class="title">ar</span> <span class="title">mostBoughtCarIterative</span> = <span class="title">null</span>;
+<span class="title">int</span> <span class="title">boughtTimesIterative</span> = 0;
+<span class="title">for</span> <span class="params">(<span class="variable">Entry</span>&lt;<span class="variable">Car</span>, <span class="variable">Integer</span>&gt; en<span class="keyword">try</span> : cars<span class="variable">Bought</span>.<span class="function_name">entrySet</span>()) <span class="tuple">{
+  if (en<span class="keyword">try</span>.<span class="function_name">getValue</span>() &gt; bought<span class="variable">TimesIterative</span>) <span class="tuple">{
+    most<span class="variable">BoughtCarIterative</span> = en<span class="keyword">try</span>.<span class="function_name">getKey</span>();
+    bought<span class="variable">TimesIterative</span> = en<span class="keyword">try</span>.<span class="function_name">getValue</span>();
+  }
+}
+</code></pre><pre><code class="scala"><span class="comment">// Functional version</span>
+val carsBought = db<span class="variable">.sales</span><span class="variable">.groupBy</span>( _<span class="variable">.car</span> )<span class="variable">.mapValues</span>( _<span class="variable">.length</span> )
+val mostBoughtCar = carsBought<span class="variable">.maxBy</span> { <span class="keyword">case</span> (car, boughtCount) =&gt; boughtCount }<span class="variable">._1</span>
+val boughtTimes = carsBought(mostBoughtCar)
+</code></pre><p>마지막 예제다. 역시 반복형 버전에 비해서 함수형 버전이 짧고 간결하다.</p><p>위 예에서 살펴볼 수 있듯이 고차 함수를 사용하면 컬렉션을 훨씬 직관적으로 다룰 수 있다.
+groupBy, map, filter, maxBy, minBy 등과 같은 함수들은 모두 함수를 인자로 받는 고차 함수다. 
+함수를 인자로 받기 때문에 컬렉션에 원소에 구애받지 않고 코드를 추상화 할 수 있으며, 이런 높은 수준의 추상화는 많은 부분에서 코드를 읽기 좋게 만든다.</p>
+                        </div>
+                        <hr />
+                                            
+                        <div class="row-fluid">
+                            
+                            <div class="pull-right">
+                                <a href="/post/next-generation-java-programming-style" class="btn btn-info">Next generation Java Programming Style <i class="icon-white icon-chevron-right"></i></a>
+                            </div>
+                            
+
+                            
+                            <div class="pull-left">
+                                <a href="/post/Array.prototype.map_with_parseInt" class="btn btn-info"><i class="icon-white icon-chevron-left"></i> What's the result of [1, 2, 3].map(parseInt)</a>
+                            </div>
+                            
+                        </div>
+                    
+
+                        
+    <div class="row-fluid">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'daewon'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">-->
+        <!--<div class="offset3 span9">-->
+            <!--<strong>tags</strong> :-->
+            <!---->
+            <!--<a href="/tag/scala">scala</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/java">java</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/collection">collection</a>&nbsp;-->
+            <!---->
+        <!--</div>-->
+    <!--</div>-->
+</div><!-- /container -->
+
+
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12 ">
+                    <div class="well">
+                        <p class="pull-right"><a href="#">Back to top</a></p>
+                            <strong>haroopress</strong> developed by <a href="http://twitter.com/rhiokim" target="_blank">@rhiokim</a>,<a href="http://twitter.com/haroopress" target="_blank">@haroopress</a> and source in <a href="https://github.com/rhiokim/haroopress" target="_blank">github</a><br/>
+                            Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
+                            Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+
+</body>
+</html>

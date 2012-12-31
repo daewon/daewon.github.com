@@ -52,6 +52,8 @@
 
           <a class="pull-right" href="/rss.xml"><span class="icon-rss"></span></a>
           
+            <a class="pull-right" href="http://twitter.com/blueiur" target="_blank"><span class="icon-twitter"></span></a>
+          
 
           <div class="nav-collapse">
             <ul class="nav">
@@ -97,6 +99,8 @@
                     
                     <li><a href="/category/javascript"><i class="icon-book"></i> javascript</a></li>
                     
+                    <li><a href="/category/scala"><i class="icon-book"></i> scala</a></li>
+                    
                     <li><a href="/category/java"><i class="icon-book"></i> java</a></li>
                     
                 </ul>
@@ -104,6 +108,24 @@
 
                 
                 
+        <div class="well _github_repo">
+            <div class="pull-right">
+                <a href="/github"><i class="icon-info-sign"></i></a>
+            </div>
+            <h6>github.com repositories</h6>
+            <div class="progress progress-info progress-striped active">
+                <div class="bar" style="width: 10%;"></div>
+            </div>
+        </div>
+        <script>
+            github({
+                user: 'daewon',
+                count: 10,
+                skipForks: true,
+                target: '._github_repo'
+            });
+        </script>
+    
 
             
 <div class="well">
@@ -124,6 +146,39 @@
             
         </div>
         <div class="span9">
+            
+            <div class="well">
+                
+                <div class="page-header">
+                    <h1><a href="/post/from-java-to-scala-scala-collections-hwalyong">No more loops with Scala</a></h1>
+                    <span class="pull-right">Monday, December 31 2012 2:00 AM</span>
+                </div>
+                <div class="pull-right">
+                    <ul class="thumbnails">
+                        <li class="thumbnail">
+                            <img src="http://www.gravatar.com/avatar/201e7a836b57569bf241ddd73d90c3bf?r=pg&amp;s=128.jpg&amp;d=identicon"/>
+                        </li>
+                    </ul>
+                </div>
+                <div class="markdown-wrapper">
+                    <h3 id="toc_17">자바에서는 일반적으로 loop를 기반으로 컬렉션을 다룬다.</h3>
+<p><a href="http://daewon.github.com/post/next-generation-java-programming-style/">차세대 자바 프로그래밍 스타일</a>
+에서도 살펴본 것과 같이 loop가 컬렉션을 다루는 가장 좋은 방법이 아니다. loop는 코드의 가독성을 빠르게 망가뜨린다.
+함수가 1급 객체인 언어들에서는 이러한 loop를 명시적으로 노출시키지 않고 <strong>고차 함수</strong> 로 추상화 사킨다. 
+이런 추상화 덕분에 컬렉션을 다루는 방법이 매우 간결하고 직관적이다.</p><p>자바에서도 함수형 스타일로 컬렉션을 다루고자 한 시도로 <a href="http://code.google.com/p/lambdaj/">lambda J</a> 프로젝트가 있다. </p><p>lambdaj가 만들어진 이유는 다음과 같다</p>
+<blockquote>
+<p>복잡한 데이터 모델을 다루는 프로젝트에서 비즈니스 로직의 상당 부분은
+어떤 작업을 위해서 비지니스 객체의 컬렉션을 순회하는 일의 반복이다. 
+loop는 조건이 추가되거나 중첩되기 시작하면 코드를 작성하는것 보다 읽기가 더 어려워진다. 
+그렇기 때문에 비지니스 로직이 조금 더 기술적인 부분과 분리되어 작성되기를 원한다.</p></blockquote>
+
+                </div>
+                <hr/>
+                <a class="pull-right" href="/post/from-java-to-scala-scala-collections-hwalyong#disqus_thread"></a>
+                <p>
+                    <a href="/post/from-java-to-scala-scala-collections-hwalyong" class="btn btn-info">Read more...</a>
+                </p>
+            </div>
             
             <div class="well">
                 
@@ -165,7 +220,7 @@
                     </ul>
                 </div>
                 <div class="markdown-wrapper">
-                    <h3 id="toc_5"><a href="http://codemonkeyism.com/generation-java-programming-style/">차세대 자바 프로그래밍 스타일</a></h3>
+                    <h3 id="toc_19"><a href="http://codemonkeyism.com/generation-java-programming-style/">차세대 자바 프로그래밍 스타일</a></h3>
 <p>많은 회사와 개발자들이 자바로부터 새로운 언어인 <strong>Ruby, Python, Groovy, Erlang, Scala</strong> 등으로 이동했다.</p><p>여전히 자바를 사용하고 있을지 모르겠지만, 자바를 사용하더라도 프로그래밍 스타일을 바꿀 수 있고, 새로운 언어로부터 여러 이점을 취할 수 있다.</p><p>최근 15년 동안 자바의 프로그래밍 스타일은 매우 많이 변했다.</p>
 <ul>
 <li><strong>Final is your new love</strong></li>
@@ -186,7 +241,7 @@
 
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = ''; // required: replace example with your forum shortname
+        var disqus_shortname = 'daewon'; // required: replace example with your forum shortname
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function () {
