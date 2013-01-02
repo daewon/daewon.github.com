@@ -226,7 +226,7 @@ loop는 조건이 추가되거나 중첩되기 시작하면 코드를 작성하�
 <h4 id="toc_6">01. Car 목록에서 모든 brand를 출력해 보자</h4>
 <pre><code class="java">// <span class="variable">Iterative</span> version
 <span class="variable">StringBuilder</span> sb = new <span class="variable">StringBuilder</span>();
-<span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Car</span> car : db.<span class="function_name">getCars</span>())</span> {
+<span class="function"><span class="title">for</span> <span class="params">(<span class="variable">Car</span> car : sb.<span class="function_name">getCars</span>())</span> {
   <span class="title">db</span>.<span class="title">append</span><span class="params">(car.<span class="function_name">getBrand</span>())</span>.<span class="title">append</span><span class="params">(<span class="string">", "</span>)</span>;
   S<span class="title">tring</span> <span class="title">brands</span> = <span class="title">sb</span>.<span class="title">toString</span><span class="params">()</span>.<span class="title">substring</span><span class="params">(<span class="number">0</span>, sb.<span class="function_name">length</span>()-<span class="number">2</span>)</span>;
 }
