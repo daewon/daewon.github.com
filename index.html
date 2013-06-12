@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> daewon's log</title>
+    <meta name="description" content="about programming language">
+    <meta name="author" content="daewon">
+    <meta name="keywords" content="javascript,node,scala" />
+    <meta name="generator" content="haroopress v0.9.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="/rss.xml" rel="alternate" title="daewon's log" type="application/rss+xml">
+
+    <!-- Le styles -->
+    <link rel="canonical" href="http://daewon.github.io">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/markdown.css" rel="stylesheet">
+    <link href="/css/haroopress.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/code/default.css" rel="stylesheet">
+    
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon-64.png">
+
+    <!-- Le javascript -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.jsonp.js"></script>
+    <script src="/js/mustache.js"></script>
+    <script src="/js/apps/github.js"></script>
+    <script src="/js/apps/twitter.js"></script>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+        <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <a class="pull-right" href="/rss.xml"><span class="icon-rss"></span></a>
+          
+
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/archives">Archives</a>
+              </li>
+              <!-- <li> -->
+              <!--   <a href="/slides">Slides</a> -->
+              <!-- </li> -->
+                
+                    <li>
+                        <a href="/coursera-dot-o-rg/">Coursera.org</a>
+                    </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+<link href="/css/code/default.css" rel="stylesheet">
+
+<div class="container page-main">
+    <div class="row">
+        <div class="span3">
+            
+            <div id="author" class="well">
+                <div>
+									<img style="margin-bottom:5px;" src="./img/daewon.png"></img>
+											 <h4>About Programming Languages :)</h4>
+                </div>
+            </div>
+
+                        <div class="well">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Categories</li>
+                    <li class=""><a href="/category"><i class="icon-home"></i> Home</a></li>
+                    
+                    <li><a href="/category/javascript"><i class="icon-book"></i> javascript</a></li>
+                    
+                    <li><a href="/category/scala"><i class="icon-book"></i> scala</a></li>
+                    
+                    <li><a href="/category/java"><i class="icon-book"></i> java</a></li>
+                    
+                </ul>
+            </div>
+
+                
+    <div class="well contributors">
+        <div class="pull-right">
+            <a href="/authors"><i class=" icon-info-sign"></i></a>
+        </div>
+        <h6>contributors</h6>
+        
+        <div class="row-fluid">
+            <a class="pull-left" href="/authors/daewon" title="undefined">
+                <img src="http://www.gravatar.com/avatar/201e7a836b57569bf241ddd73d90c3bf?r=pg&amp;s=128.jpg&amp;d=identicon" />
+            </a>
+            <p>
+                <strong>daewon</strong><br/>
+                <a href="https://twitter.com//blueiur" target="_blank">@blueiur</a>
+            </p>
+        </div>
+        <hr>
+        
+    </div>
+    
+                
+
+            
+<div class="well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Favorites</li>
+        
+        <li>
+            <a href="https://groups.google.com/forum/?hl=ko&amp;fromgroups#!forum/scala-korea" target="_blank">라 스칼라 코딩단</a>
+        </li>
+        
+        <li>
+            <a href="http://hackerwins.github.com" target="_blank">해커 윈스</a>
+        </li>
+        
+        <li>
+            <a href="http://haroopress.github.com" target="_blank">하루프레스</a>
+        </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        <div class="span9">
+            
+            <div class="well">
+                
+                <div class="page-header">
+                    <h1><a href="/post/from-java-to-scala-scala-collections-hwalyong">No more loops with Scala</a></h1>
+                    <span class="pull-right">Monday, December 31 2012 2:00 AM</span>
+                </div>
+                <div class="pull-right">
+                    <ul class="thumbnails">
+                        <li class="thumbnail">
+                            <img src="http://www.gravatar.com/avatar/201e7a836b57569bf241ddd73d90c3bf?r=pg&amp;s=128.jpg&amp;d=identicon"/>
+                        </li>
+                    </ul>
+                </div>
+                <div class="markdown-wrapper">
+                    <h3 id="toc_18">자바에서는 일반적으로 loop를 기반으로 컬렉션을 다룬다.</h3>
+<p><a href="http://daewon.github.com/post/next-generation-java-programming-style/">차세대 자바 프로그래밍 스타일</a>
+에서도 살펴본 것과 같이 loop가 컬렉션을 다루는 가장 좋은 방법은 아니다. loop는 코드의 가독성을 빠르게 망가뜨린다.
+함수가 1급 객체인 언어들에서는 이러한 loop를 명시적으로 노출시키지 않고 <strong>고차 함수</strong> 로 추상화 시킨다. 
+이런 추상화 덕분에 컬렉션을 다루는 방법이 매우 간결하고 직관적이다.</p><p>자바에서도 함수형 스타일로 컬렉션을 다루고자 한 시도로 <a href="http://code.google.com/p/lambdaj/">lambdaj</a> 프로젝트가 있다. </p><p>lambdaj가 만들어진 이유는 다음과 같다</p>
+<blockquote>
+<p>복잡한 데이터 모델을 다루는 프로젝트에서 비즈니스 로직의 상당 부분은
+어떤 작업을 위해서 비지니스 객체의 컬렉션을 순회하는 일의 반복이다. 
+loop는 조건이 추가되거나 중첩되기 시작하면 코드를 작성하는것 보다 읽기가 더 어려워진다. 
+그렇기 때문에 비지니스 로직이 조금 더 기술적인 부분과 분리되어 작성되기를 원한다.</p></blockquote>
+
+                </div>
+                <hr/>
+                <a class="pull-right" href="/post/from-java-to-scala-scala-collections-hwalyong#disqus_thread"></a>
+                <p>
+                    <a href="/post/from-java-to-scala-scala-collections-hwalyong" class="btn btn-info">Read more...</a>
+                </p>
+            </div>
+            
+            <div class="well">
+                
+                <div class="page-header">
+                    <h1><a href="/post/Array.prototype.map_with_parseInt">What's the result of [1, 2, 3].map(parseInt)</a></h1>
+                    <span class="pull-right">Monday, December 10 2012 12:02 AM</span>
+                </div>
+                <div class="pull-right">
+                    <ul class="thumbnails">
+                        <li class="thumbnail">
+                            <img src="http://www.gravatar.com/avatar/201e7a836b57569bf241ddd73d90c3bf?r=pg&amp;s=128.jpg&amp;d=identicon"/>
+                        </li>
+                    </ul>
+                </div>
+                <div class="markdown-wrapper">
+                    <p><strong>[1, 2, 3].map(parseInt)를 실행하면 어떤 결과가 나올까?</strong></p><p><img src="/post/Array.prototype.map_with_parseInt/@img/map.png" alt="wrongresult "></p><p>결과는 [1, Nan, Nan]이 나오는데 원인은 map 함수의 구현과 가변 인자 때문에 발생한다. </p><p>먼저 아래 식에 실행 결과를 확인해 보자</p><pre><code class="javacript">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>].map( <span class="built_in">function</span>(v, i, o){ 
+    <span class="keyword">return</span> parseInt(v) 
+}; <span class="comment">// [1, 2, 3]</span>
+</code></pre>
+                </div>
+                <hr/>
+                <a class="pull-right" href="/post/Array.prototype.map_with_parseInt#disqus_thread"></a>
+                <p>
+                    <a href="/post/Array.prototype.map_with_parseInt" class="btn btn-info">Read more...</a>
+                </p>
+            </div>
+            
+            <div class="well">
+                
+                <div class="page-header">
+                    <h1><a href="/post/next-generation-java-programming-style">Next generation Java Programming Style</a></h1>
+                    <span class="pull-right">Saturday, May 1 2010 11:26 PM</span>
+                </div>
+                <div class="pull-right">
+                    <ul class="thumbnails">
+                        <li class="thumbnail">
+                            <img src="http://www.gravatar.com/avatar/201e7a836b57569bf241ddd73d90c3bf?r=pg&amp;s=128.jpg&amp;d=identicon"/>
+                        </li>
+                    </ul>
+                </div>
+                <div class="markdown-wrapper">
+                    <h3 id="toc_20"><a href="http://codemonkeyism.com/generation-java-programming-style/">차세대 자바 프로그래밍 스타일</a></h3>
+<p>많은 회사와 개발자들이 자바로부터 새로운 언어인 <strong>Ruby, Python, Groovy, Erlang, Scala</strong> 등으로 이동했다.</p><p>여전히 자바를 사용하고 있을지 모르겠지만, 자바를 사용하더라도 프로그래밍 스타일을 바꿀 수 있고, 새로운 언어로부터 여러 이점을 취할 수 있다.</p><p>최근 15년 동안 자바의 프로그래밍 스타일은 매우 많이 변했다.</p>
+<ul>
+<li><strong>Final is your new love</strong></li>
+</ul>
+
+                </div>
+                <hr/>
+                <a class="pull-right" href="/post/next-generation-java-programming-style#disqus_thread"></a>
+                <p>
+                    <a href="/post/next-generation-java-programming-style" class="btn btn-info">Read more...</a>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div><!-- /container -->
+
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = ''; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+
+
+
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12 ">
+                    <div class="well">
+                        <p class="pull-right"><a href="#">Back to top</a></p>
+                            <strong>haroopress</strong> developed by <a href="http://twitter.com/rhiokim" target="_blank">@rhiokim</a>,<a href="http://twitter.com/haroopress" target="_blank">@haroopress</a> and source in <a href="https://github.com/rhiokim/haroopress" target="_blank">github</a><br/>
+                            Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
+                            Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>What's the result of [1, 2, 3].map(parseInt) |  daewon's log</title>
+    <meta name="description" content="about programming language">
+    <meta name="author" content="daewon">
+    <meta name="keywords" content="javascript,node,scala" />
+    <meta name="generator" content="haroopress v0.9.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="/rss.xml" rel="alternate" title="daewon's log" type="application/rss+xml">
+
+    <!-- Le styles -->
+    <link rel="canonical" href="http://daewon.github.io">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/markdown.css" rel="stylesheet">
+    <link href="/css/haroopress.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/code/default.css" rel="stylesheet">
+    
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon-64.png">
+
+    <!-- Le javascript -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.jsonp.js"></script>
+    <script src="/js/mustache.js"></script>
+    <script src="/js/apps/github.js"></script>
+    <script src="/js/apps/twitter.js"></script>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+        <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <a class="pull-right" href="/rss.xml"><span class="icon-rss"></span></a>
+          
+
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/archives">Archives</a>
+              </li>
+              <!-- <li> -->
+              <!--   <a href="/slides">Slides</a> -->
+              <!-- </li> -->
+                
+                    <li>
+                        <a href="/coursera-dot-o-rg/">Coursera.org</a>
+                    </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+<link href="/css/code/default.css" rel="stylesheet">
+<div class="container page-archive">
+    <div class="row">
+        <div class="span3">
+            <div id="author" class="well">
+                <div>
+                    <h3>About Author</h3>
+                    <ul class="thumbnails">
+                        <li>
+                            <a class="thumbnail">
+                                <img src="http://www.gravatar.com/avatar/201e7a836b57569bf241ddd73d90c3bf?r=pg&amp;s=128.jpg&amp;d=identicon" />
+                            </a>
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>daewon</strong><br/>
+                        blog: <a href="http://daewon.github.com" target="_blank">http://daewon.github.com</a><br/>
+                        twitter: <a href="http://twitter.com/blueiur" target="_blank">@blueiur</a><br/>
+                        github: <a href="https://github.com/daewon" target="_blank">daewon</a>
+                    </p>
+                    <p>
+                        <a href="https://twitter.com/blueiur" class="twitter-follow-button" data-show-count="true">Follow @blueiur</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </p>
+                    <p>
+                        <p><a href="http://about.me/daewon">about.me/daewon</a></p><p><a href="http://synapsoft.co.kr">사이냅소프트 근무</a></p><p><a href="http://office.naver.com">웹오피스 개발</a></p>
+                    </p>
+                </div>
+                <div>
+                    <h3>About this Article</h3>
+                    <p>
+                        <h5>Date Released:</h5>
+                        <span>Monday, December 10 2012 12:02 AM</span>
+                    </p>
+                </div>
+            </div>
+                        <div class="well">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Categories</li>
+                    <li class=""><a href="/category"><i class="icon-home"></i> Home</a></li>
+                    
+                    <li><a href="/category/javascript"><i class="icon-book"></i> javascript</a></li>
+                    
+                    <li><a href="/category/scala"><i class="icon-book"></i> scala</a></li>
+                    
+                    <li><a href="/category/java"><i class="icon-book"></i> java</a></li>
+                    
+                </ul>
+            </div>
+
+            
+<div class="well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Recent Articles</li>
+    
+        <li>
+            <a href="/post/from-java-to-scala-scala-collections-hwalyong" target="_blank">No more loops with Scala
+            <span class="label">daewon</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/Array.prototype.map_with_parseInt" target="_blank">What's the result of [1, 2, 3].map(parseInt)
+            <span class="label">daewon</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/next-generation-java-programming-style" target="_blank">Next generation Java Programming Style
+            <span class="label">daewon</span></a>
+        </li>
+    
+    </ul>
+</div>
+
+        </div>
+        <div class="span9">
+            <div class="row">
+                <div class="span9">
+                    <div class="well bg">
+                        
+                        <div class="page-header">
+                            <h1>What's the result of [1, 2, 3].map(parseInt)</h1>
+                        </div>
+
+                        <div class="pull-right social-area">
+                                                
+                                                
+
+                            
+                        </div>
+
+                        <div class="markdown-wrapper">
+                            <p><strong>[1, 2, 3].map(parseInt)를 실행하면 어떤 결과가 나올까?</strong></p><p><img src="./@img/map.png" alt="wrongresult "></p><p>결과는 [1, Nan, Nan]이 나오는데 원인은 map 함수의 구현과 가변 인자 때문에 발생한다. </p><p>먼저 아래 식에 실행 결과를 확인해 보자</p><pre><code class="javacript">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>].map( <span class="built_in">function</span>(v, i, o){ 
+    <span class="keyword">return</span> parseInt(v) 
+}; <span class="comment">// [1, 2, 3]</span>
+</code></pre><p>map 함수에 인자로 사용된 익명함수는 인자를 parseInt함수로 전달만 하기 때문에 제거가 가능하다.</p><p>위 식을 아래와 같이 수정 후 결과를 확인해 보자.</p><pre><code class="javacript">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>]<span class="variable">.map</span>( parseInt ); <span class="comment">// [1, NaN, NaN]</span>
+</code></pre><p>결과가 이상하지 않은가? 이제부터 한 가지씩 이유를 살펴보자.</p>
+<h4 id="toc_0">먼저 Array.prototype.map 함수는 이터레이터(각 원소를 순회하는 함수)를 받아서 새로운 array를 반환하는 메서드다.</h4>
+<p>사용법을 살펴보자.</p><pre><code class="javacript">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].map( <span class="keyword">function</span>(v, i, o){
+    <span class="keyword">return</span> v * <span class="number">2</span>;
+}); <span class="comment">// [2, 4, 6]  </span>
+</code></pre><p>결과는 각 인자에 2가 곱해지 <em>[2, 4, 6]</em>이된다.</p><p>이터레이터 함수를 살펴 보면 조금 특이한게 있는데 인자를 <em>3</em>개 받는다.</p>
+<ol>
+<li>첫번째 인자는 원소의 값이다</li>
+<li>두번째 인자는 원소의 index다</li>
+<li>세번째 인자는 array 자신이다</li>
+</ol>
+
+<h4 id="toc_1">다음으로 parseInt 함수를 살펴보자.</h4>
+<p>parseInt 함수는 문자열을 받아서 문자열에 해당하는 숫자를 반환하는 함수다. </p><p>2개의 인자를 받으며 첫번째 인자는 파싱할 문자열이고 두번째 인자는 기수다.</p><pre><code class="javascript">parseInt(<span class="string">'123'</span>) <span class="comment">// 123</span>
+parseInt(<span class="string">'123'</span>, <span class="number">8</span>) <span class="comment">// 83</span>
+parseInt(<span class="string">'123'</span>, <span class="number">1</span>) <span class="comment">// NaN</span>
+</code></pre><p>이제 진짜 문제의 원인인 Array.prototype.map 함수의 구현을 살펴보자.</p><p>구현을 살펴 보면 callback.call 구문을 확인할 수 있다. </p><pre><code class="javascript">// Production steps of ECMA-<span class="number">262</span>, Edition <span class="number">5</span>, <span class="number">15.4</span><span class="number">.4</span><span class="number">.19</span>
+// Reference: http://es5.github.com/<span class="comment">#x15.4.4.19</span>
+<span class="keyword">if</span> (!Array.prototype.map) {
+  Array.prototype.map = <span class="keyword">function</span>(callback, thisArg) {
+  <span class="keyword">...</span>
+    <span class="keyword">while</span>(k &lt; len) {
+    <span class="keyword">...</span>
+        mappedValue = callback.call(<span class="literal">T</span>, kValue, k, O);
+    <span class="keyword">...</span>
+    <span class="keyword">...</span>
+    <span class="keyword">return</span> A;
+  };    
+}
+</code></pre><p>콜백 메서드를 호출하는 부분에 주목하자. <strong>왜 callback() 이 아니라 callback.call() 일까?</strong></p><p>자바스크립트는 함수를 실행 할 수 있는 다양한 방법을 제공한다. </p><p>함수 호출 연산자인 ‘()’를 통해서도 함수를 호출 할 수 있으며 Function.prototype.call 혹은 Function.prototype.apply를 사용해서도 함수를 호출할 수 있다. </p><p>call, apply 메서드를 사용하면 함수의 실행 컨택스트를 변경시키거나 함수의 인자를 변경하는 등 다양한 방법으로 함수의 호출를 조작할 수 있다. </p><p>이를 parseInt 함수에 적용해 보자.</p><pre><code class="javascript">parseInt(<span class="comment">'10') // 결과가 10이 된다는 것은 위에서 살펴봤다.</span>
+parseInt.<span class="keyword">call</span>(<span class="literal">null</span>, <span class="comment">'10') // 결과는 어떻게 될까? 역시 10이다.</span>
+parseInt.<span class="keyword">call</span>(<span class="literal">null</span>, <span class="comment">'10', 1) // 결과는 어떻게 될까? 결과는 NaN이다. </span>
+</code></pre><p><strong>parseInt 함수는 인자를 2개 받는 함수인데 두번째 인자로 전해진 기수 1에 대해서 표현할 방법을 찾이 못해서 NaN을 결과로 반환 한 것이다.</strong></p>
+<h4 id="toc_2">이제 결론이다.</h4>
+
+<ol>
+<li>map 함수에 콜백이 전달받는 인자가 3개라는 것을 살펴봤다.</li>
+<li>parseInt 함수가 인자를 2개 받고 2번째 인자에 잘못된 값이 들어오면 NaN을 반환하는 것을 살펴봤다.</li>
+<li>map 구현부에 콜백함수를 실행하는 구분은 다음과 같다. <em>callback.call(T, kValue, k, O)</em></li>
+</ol>
+<p>위 사실을 종합해서 [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;].map(parseInt)의 실행 과정을 풀어보면 다음과 같다.</p><pre><code class="javascript"><span class="comment">// step. 1</span>
+parseInt.call(<span class="keyword">null</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="keyword">null</span>) <span class="comment">// 1 </span>
+<span class="comment">// step. 2</span>
+parseInt.call(<span class="keyword">null</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="keyword">null</span>) <span class="comment">// NaN</span>
+<span class="comment">// step. 3</span>
+parseInt.call(<span class="keyword">null</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="keyword">null</span>) <span class="comment">// NaN</span>
+</code></pre>
+<h4 id="toc_3">그래서 결과가 예상과를 다르게 [1, NaN, NaN]이 나오게 된다.</h4>
+
+                        </div>
+                        <hr />
+                                            
+                        <div class="row-fluid">
+                            
+                            <div class="pull-right">
+                                <a href="/post/from-java-to-scala-scala-collections-hwalyong" class="btn btn-info">No more loops with Scala <i class="icon-white icon-chevron-right"></i></a>
+                            </div>
+                            
+
+                            
+                        </div>
+                    
+
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">-->
+        <!--<div class="offset3 span9">-->
+            <!--<strong>tags</strong> :-->
+            <!---->
+            <!--<a href="/tag/javascript">javascript</a>&nbsp;-->
+            <!---->
+        <!--</div>-->
+    <!--</div>-->
+</div><!-- /container -->
+
+
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12 ">
+                    <div class="well">
+                        <p class="pull-right"><a href="#">Back to top</a></p>
+                            <strong>haroopress</strong> developed by <a href="http://twitter.com/rhiokim" target="_blank">@rhiokim</a>,<a href="http://twitter.com/haroopress" target="_blank">@haroopress</a> and source in <a href="https://github.com/rhiokim/haroopress" target="_blank">github</a><br/>
+                            Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
+                            Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+
+</body>
+</html>
