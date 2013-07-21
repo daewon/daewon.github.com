@@ -153,6 +153,42 @@
             <div class="well">
                 
                 <div class="page-header">
+                    <h1><a href="/post/the-reason-scala-has-a-bottom-type">The reason Scala has a bottom type</a></h1>
+                    <span class="pull-right">Tuesday, July 23 2013 2:00 AM</span>
+                </div>
+                <div class="pull-right">
+                    <ul class="thumbnails">
+                        <li class="thumbnail">
+                            <img src="http://www.gravatar.com/avatar/201e7a836b57569bf241ddd73d90c3bf?r=pg&amp;s=128.jpg&amp;d=identicon"/>
+                        </li>
+                    </ul>
+                </div>
+                <div class="markdown-wrapper">
+                    <h3 id="toc_24">Why <code>throw</code> has a type: <code>Nothing</code> in Scala</h3>
+
+<h4 id="toc_25">Scala에서 <code>throw</code> 는 왜 타일이 필요할까? 아래 예문을 살펴보자.</h4>
+<pre><code class="scala"><span class="function"><span class="keyword">def</span> <span class="title">error</span><span class="params">(message: String)</span>:</span> Nothing = throw new RuntimeException(message)
+<span class="function"><span class="keyword">def</span> <span class="title">divide</span><span class="params">(x: Int, y: Int)</span>:</span> Int = {
+  <span class="keyword">if</span> (y != <span class="number">0</span>) x / y
+  <span class="keyword">else</span> error(<span class="string">"can't divide by zero"</span>)
+}
+</code></pre><p>몇가지 특이한 점을 발견할 수 있다.</p>
+<ol>
+<li>divid 함수의 반환 타입은 <code>Int</code>이다. 그런데 divid 함수의 본문은 <code>if/else</code> 뿐이며 <code>if</code>와 <code>else</code>의 반환 타입이 다르다.</li>
+<li>error 함수의 반환 타입은 <code>Nothing</code>이다. 그런데 error함수의 본문은 <code>throw</code> 뿐이다. <code>throw</code>가 되면 실행이 중지될 텐데 타입이 왜 필요할까?</li>
+</ol>
+
+                </div>
+                <hr/>
+                <a class="pull-right" href="/post/the-reason-scala-has-a-bottom-type#disqus_thread"></a>
+                <p>
+                    <a href="/post/the-reason-scala-has-a-bottom-type" class="btn btn-info">Read more...</a>
+                </p>
+            </div>
+            
+            <div class="well">
+                
+                <div class="page-header">
                     <h1><a href="/post/from-java-to-scala-scala-collections-hwalyong">No more loops with Scala</a></h1>
                     <span class="pull-right">Monday, December 31 2012 2:00 AM</span>
                 </div>

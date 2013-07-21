@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[daewon's log]]></title><description><![CDATA[about programming language]]></description><link>http://daewon.github.io</link><image><url>http://daewon.github.io/public/img/favorite.png</url><title>daewon&apos;s log</title><link>http://daewon.github.io</link></image><generator>NodeJS RSS Module</generator><lastBuildDate>Wed, 12 Jun 2013 09:07:01 GMT</lastBuildDate><atom:link href="http://daewon.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[No more loops with Scala]]></title><description><![CDATA[<img src="http://www.gravatar.com/avatar/201e7a836b57569bf241ddd73d90c3bf?r=pg&s=48.jpg&d=identicon"><br/><h3 id="toc_18">자바에서는 일반적으로 loop를 기반으로 컬렉션을 다룬다.</h3>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[daewon's log]]></title><description><![CDATA[about programming language]]></description><link>http://daewon.github.io</link><image><url>http://daewon.github.io/public/img/favorite.png</url><title>daewon&apos;s log</title><link>http://daewon.github.io</link></image><generator>NodeJS RSS Module</generator><lastBuildDate>Sun, 21 Jul 2013 16:46:46 GMT</lastBuildDate><atom:link href="http://daewon.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[The reason Scala has a bottom type]]></title><description><![CDATA[<img src="http://www.gravatar.com/avatar/201e7a836b57569bf241ddd73d90c3bf?r=pg&s=48.jpg&d=identicon"><br/><h3 id="toc_24">Why <code>throw</code> has a type: <code>Nothing</code> in Scala</h3>
+
+<h4 id="toc_25">Scala에서 <code>throw</code> 는 왜 타일이 필요할까? 아래 예문을 살펴보자.</h4>
+<pre><code class="scala"><span class="function"><span class="keyword">def</span> <span class="title">error</span><span class="params">(message: String)</span>:</span> Nothing = throw new RuntimeException(message)
+<span class="function"><span class="keyword">def</span> <span class="title">divide</span><span class="params">(x: Int, y: Int)</span>:</span> Int = {
+  <span class="keyword">if</span> (y != <span class="number">0</span>) x / y
+  <span class="keyword">else</span> error(<span class="string">"can't divide by zero"</span>)
+}
+</code></pre><p>몇가지 특이한 점을 발견할 수 있다.</p>
+<ol>
+<li>divid 함수의 반환 타입은 <code>Int</code>이다. 그런데 divid 함수의 본문은 <code>if/else</code> 뿐이며 <code>if</code>와 <code>else</code>의 반환 타입이 다르다.</li>
+<li>error 함수의 반환 타입은 <code>Nothing</code>이다. 그런데 error함수의 본문은 <code>throw</code> 뿐이다. <code>throw</code>가 되면 실행이 중지될 텐데 타입이 왜 필요할까?</li>
+</ol>
+]]></description><link>http://daewon.github.io/post/the-reason-scala-has-a-bottom-type</link><guid isPermaLink="false">the-reason-scala-has-a-bottom-type</guid><dc:creator><![CDATA[<a href="blueiur" target="_blank">daewon</a>]]></dc:creator><pubDate>Mon, 22 Jul 2013 17:00:00 GMT</pubDate></item><item><title><![CDATA[No more loops with Scala]]></title><description><![CDATA[<img src="http://www.gravatar.com/avatar/201e7a836b57569bf241ddd73d90c3bf?r=pg&s=48.jpg&d=identicon"><br/><h3 id="toc_18">자바에서는 일반적으로 loop를 기반으로 컬렉션을 다룬다.</h3>
 <p><a href="http://daewon.github.com/post/next-generation-java-programming-style/">차세대 자바 프로그래밍 스타일</a>
 에서도 살펴본 것과 같이 loop가 컬렉션을 다루는 가장 좋은 방법은 아니다. loop는 코드의 가독성을 빠르게 망가뜨린다.
 함수가 1급 객체인 언어들에서는 이러한 loop를 명시적으로 노출시키지 않고 <strong>고차 함수</strong> 로 추상화 시킨다. 
