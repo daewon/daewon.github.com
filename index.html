@@ -52,6 +52,8 @@
 
           <a class="pull-right" href="/rss.xml"><span class="icon-rss"></span></a>
           
+            <a class="pull-right" href="http://twitter.com/blueiur" target="_blank"><span class="icon-twitter"></span></a>
+          
 
           <div class="nav-collapse">
             <ul class="nav">
@@ -125,6 +127,24 @@
     </div>
     
                 
+        <div class="well _github_repo">
+            <div class="pull-right">
+                <a href="/github"><i class="icon-info-sign"></i></a>
+            </div>
+            <h6>github.com repositories</h6>
+            <div class="progress progress-info progress-striped active">
+                <div class="bar" style="width: 10%;"></div>
+            </div>
+        </div>
+        <script>
+            github({
+                user: 'daewon',
+                count: 10,
+                skipForks: true,
+                target: '._github_repo'
+            });
+        </script>
+    
 
             
 <div class="well">
